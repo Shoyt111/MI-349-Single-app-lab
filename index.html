@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5ef">
+    <meta name="description" content="Explore Pokémon, their types, and their stats with The Pokemon Index.">
+    <title>The Pokemon Index — a Pokémon field guide</title>
+    <link rel="preconnect" href="https://pokeapi.co">
+    <link rel="preconnect" href="https://raw.githubusercontent.com">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="The Pokemon Index home">
+        <span class="wordmark-mark" aria-hidden="true">✳</span>
+        <span>pokemon<span class="wordmark-light">index</span></span>
+      </a>
+      <p class="edition">A FIELD GUIDE TO THE WORLD OF POKÉMON <span>✦</span></p>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> POCKET-SIZED WONDERS</p>
+        <h1 id="page-title">The world is full<br>of <span>creatures.</span></h1>
+        <p class="intro-copy">Meet a Pokémon, learn what makes it tick, and see who you find next.</p>
+      </section>
+
+      <section class="explorer" aria-label="Pokémon explorer">
+        <div class="explorer-top">
+          <form id="search-form" class="search-form" role="search">
+            <label class="sr-only" for="pokemon-search">Search Pokémon by name or number</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="pokemon-search" name="pokemon" type="search" placeholder="Try “bulbasaur” or “1”" autocomplete="off" required>
+            <button class="search-button" type="submit">Find one <span aria-hidden="true">↗</span></button>
+          </form>
+          <button id="random-button" class="random-button" type="button">
+            <span aria-hidden="true">⤨</span> Surprise me
+          </button>
+        </div>
+
+        <p class="search-hint">A name or Pokédex number will do. There are over 1,000 to meet.</p>
+
+        <div id="status-message" class="status-message" role="status" aria-live="polite">
+          Finding your first creature…
+        </div>
+
+        <article id="pokemon-card" class="pokemon-card" aria-label="Pokémon details" hidden>
+          <div class="pokemon-art">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <span class="art-label">FIELD<br>SPECIMEN</span>
+            <img id="pokemon-image" src="" alt="">
+            <span id="pokemon-number" class="pokemon-number"></span>
+          </div>
+          <div class="pokemon-info">
+            <p class="specimen-label"><span class="specimen-dot"></span> SPECIMEN IDENTIFIED</p>
+            <h2 id="pokemon-name"></h2>
+            <div id="pokemon-types" class="type-list"></div>
+            <p class="description-label">AT A GLANCE</p>
+            <dl class="measurements">
+              <div>
+                <dt>Height</dt>
+                <dd id="pokemon-height"></dd>
+              </div>
+              <div>
+                <dt>Weight</dt>
+                <dd id="pokemon-weight"></dd>
+              </div>
+            </dl>
+            <div class="stats-heading">
+              <p class="description-label">BASE STATS</p>
+              <span>OUT OF 255</span>
+            </div>
+            <ul id="pokemon-stats" class="stats-list" aria-label="Base stats"></ul>
+          </div>
+        </article>
+        <p class="data-credit">FIELD DATA FROM <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">POKÉAPI</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Keep looking closer. There’s always something new.</p>
+      <span aria-hidden="true">✳</span>
+    </footer>
+  </body>
+</html>
