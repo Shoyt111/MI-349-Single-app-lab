@@ -63,14 +63,37 @@ button {
 }
 
 .wordmark-mark {
-  display: grid;
+  display: block;
   width: 30px;
   height: 30px;
-  place-items: center;
+}
+
+.pokeball-mark {
+  position: relative;
+  flex: 0 0 auto;
+  border: 2px solid var(--ink);
   border-radius: 50%;
-  background: var(--green);
-  color: white;
-  font-size: 17px;
+  background:
+    linear-gradient(
+      to bottom,
+      #d76b48 0 42%,
+      var(--ink) 42% 58%,
+      #fff 58% 100%
+    );
+  box-shadow: 0 1px 2px rgb(32 42 39 / 12%);
+}
+
+.pokeball-mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
 }
 
 .wordmark-light {
@@ -515,8 +538,15 @@ h2 {
 }
 
 .site-footer > span {
-  color: #829886;
-  font-size: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.pokeball-mark-small::before {
+  width: 6px;
+  height: 6px;
+  border-width: 1.5px;
 }
 
 .sr-only {
