@@ -1,4 +1,4 @@
-# Creature Atlas
+# Pokemon Index
 
 A responsive Pokémon field guide built with semantic HTML, CSS, and the browser
 Fetch API. Search by Pokémon name or Pokédex number, or choose **Surprise me**
