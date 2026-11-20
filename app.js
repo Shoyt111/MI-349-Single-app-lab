@@ -50,6 +50,22 @@ function formatName(name) {
     .join(" ");
 }
 
+function formatHeight(heightDecimeters) {
+  const meters = heightDecimeters / 10;
+  let totalInches = Math.round(meters * 39.37007874);
+  const feet = Math.floor(totalInches / 12);
+  const inches = totalInches % 12;
+
+  return `${meters.toFixed(1)} m (${feet} ft ${inches} in)`;
+}
+
+function formatWeight(weightHectograms) {
+  const kilograms = weightHectograms / 10;
+  const pounds = kilograms * 2.2046226218;
+
+  return `${kilograms.toFixed(1)} kg (${pounds.toFixed(1)} lb)`;
+}
+
 function renderPokemon(pokemon) {
   const image =
     pokemon.sprites.other?.["official-artwork"]?.front_default ??
@@ -65,8 +81,8 @@ function renderPokemon(pokemon) {
     : `No illustration available for ${formatName(pokemon.name)}`;
   pokemonNumber.textContent = `NO. ${String(pokemon.id).padStart(3, "0")}`;
   pokemonName.textContent = formatName(pokemon.name);
-  pokemonHeight.textContent = `${(pokemon.height / 10).toFixed(1)} m`;
-  pokemonWeight.textContent = `${(pokemon.weight / 10).toFixed(1)} kg`;
+  pokemonHeight.textContent = formatHeight(pokemon.height);
+  pokemonWeight.textContent = formatWeight(pokemon.weight);
 
   pokemonTypes.replaceChildren(
     ...pokemon.types.map(({ type }) => {
