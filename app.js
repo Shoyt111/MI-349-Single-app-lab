@@ -94,6 +94,7 @@ function renderPokemon(pokemon) {
     }),
   );
 
+  // I had AI help me with this particular part, it replaces any previous stat rows with the current Pokémon's stats.
   pokemonStats.replaceChildren(
     ...pokemon.stats.map(({ base_stat: value, stat }) => {
       const item = document.createElement("li");
@@ -126,6 +127,8 @@ function renderPokemon(pokemon) {
   pokemonCard.hidden = false;
 }
 
+
+// Another thing AI helped with I dont think you taught us about async. Fetches a Pokémon by name or ID and updates the displayed card.
 async function findPokemon(query) {
   const normalizedQuery = query.trim().toLowerCase();
   if (!normalizedQuery) {
